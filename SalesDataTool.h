@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <QtWidgets/QMainWindow>
 #include <QVector>
@@ -24,7 +24,7 @@ private slots:
     void onCalculate();
 
 private:
-    Ui::SalesDataToolClass* ui;   // ¡û ×¢ÒâÊÇ SalesDataToolClass£¬²»ÊÇ SalesDataTool
+    Ui::SalesDataToolClass* ui;   // â† æ³¨æ„æ˜¯ SalesDataToolClassï¼Œä¸æ˜¯ SalesDataTool
     DataReader* m_reader;
     DataProcessor* m_processor;
     QVector<QVariantMap> m_currentData;

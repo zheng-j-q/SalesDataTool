@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "DataProcessor.h"
 #include <QDebug>
 #include <QStack>
@@ -38,7 +38,7 @@ double DataProcessor::calculateTotalRevenue(const QVector<QVariantMap>& data)
     return total;
 }
 
-// ---------- Äæ²¨À¼±í´ïÊ½ÒıÇæ ----------
+// ---------- é€†æ³¢å…°è¡¨è¾¾å¼å¼•æ“ ----------
 static bool isOperator(const QString& token) {
     return token == "+" || token == "-" || token == "*" || token == "/" || token == "(" || token == ")";
 }
@@ -55,16 +55,16 @@ double DataProcessor::evaluateRPN(const QString& expression)
     QStack<double> stack;
 
     for (const QString& token : tokens) {
-        // ÅĞ¶ÏÊÇ·ñÎªÊı×Ö£¨°üÀ¨¸ºÊıºÍĞ¡Êı£©
+        // åˆ¤æ–­æ˜¯å¦ä¸ºæ•°å­—ï¼ˆåŒ…æ‹¬è´Ÿæ•°å’Œå°æ•°ï¼‰
         bool isNumber;
         double num = token.toDouble(&isNumber);
         if (isNumber) {
             stack.push(num);
         }
         else {
-            // ÔËËã·û£ºµ¯³öÁ½¸ö²Ù×÷Êı£¬¼ÆËãºóÑ¹»ØÕ»
+            // è¿ç®—ç¬¦ï¼šå¼¹å‡ºä¸¤ä¸ªæ“ä½œæ•°ï¼Œè®¡ç®—åå‹å›æ ˆ
             if (stack.size() < 2) {
-                qDebug() << "±í´ïÊ½´íÎó£º²Ù×÷Êı²»×ã";
+                qDebug() << "è¡¨è¾¾å¼é”™è¯¯ï¼šæ“ä½œæ•°ä¸è¶³";
                 return 0.0;
             }
             double b = stack.pop();
@@ -81,13 +81,13 @@ double DataProcessor::evaluateRPN(const QString& expression)
             }
             else if (token == "/") {
                 if (b == 0.0) {
-                    qDebug() << "³ıÊı²»ÄÜÎªÁã";
+                    qDebug() << "é™¤æ•°ä¸èƒ½ä¸ºé›¶";
                     return 0.0;
                 }
                 stack.push(a / b);
             }
             else {
-                qDebug() << "Î´ÖªÔËËã·û:" << token;
+                qDebug() << "æœªçŸ¥è¿ç®—ç¬¦:" << token;
                 return 0.0;
             }
         }

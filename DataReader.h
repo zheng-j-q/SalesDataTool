@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #ifndef DATAREADER_H
 #define DATAREADER_H
 
@@ -6,16 +6,16 @@
 #include <QVector>
 #include <QVariantMap>
 
-// Êı¾İ²ã£º¸ºÔğ¶ÁÈ¡ CSV ºÍÊı¾İ¿âÊı¾İ
+// æ•°æ®å±‚ï¼šè´Ÿè´£è¯»å– CSV å’Œæ•°æ®åº“æ•°æ®
 class DataReader
 {
 public:
     DataReader();
 
-    // ¶ÁÈ¡ CSV ÎÄ¼ş£¬·µ»ØĞĞÊı¾İÁĞ±í£¨Ã¿ĞĞÊÇÒ»¸ö QVariantMap£©
+    // è¯»å– CSV æ–‡ä»¶ï¼Œè¿”å›è¡Œæ•°æ®åˆ—è¡¨ï¼ˆæ¯è¡Œæ˜¯ä¸€ä¸ª QVariantMapï¼‰
     QVector<QVariantMap> readCSV(const QString& filePath);
 
-    // Ô¤Áô£º´Ó MySQL ¶ÁÈ¡Êı¾İ
+    // é¢„ç•™ï¼šä» MySQL è¯»å–æ•°æ®
     QVector<QVariantMap> readFromMySQL(const QString& connectionStr);
 };
 

@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "DataReader.h"
 #include <QFile>
 #include <QTextStream>
@@ -12,7 +12,7 @@ QVector<QVariantMap> DataReader::readCSV(const QString& filePath)
     QFile file(filePath);
 
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        qDebug() << "ÎŞ·¨´ò¿ªÎÄ¼ş:" << filePath;
+        qDebug() << "æ— æ³•æ‰“å¼€æ–‡ä»¶:" << filePath;
         return result;
     }
 
@@ -37,7 +37,7 @@ QVector<QVariantMap> DataReader::readCSV(const QString& filePath)
 
 QVector<QVariantMap> DataReader::readFromMySQL(const QString& connectionStr)
 {
-    // Ô¤Áô£ººóĞøÊµÏÖ MySQL Á¬½Ó
+    // é¢„ç•™ï¼šåç»­å®ç° MySQL è¿æ¥
     Q_UNUSED(connectionStr);
     return QVector<QVariantMap>();
 }

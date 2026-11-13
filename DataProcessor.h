@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #ifndef DATAPROCESSOR_H
 #define DATAPROCESSOR_H
 
@@ -6,19 +6,19 @@
 #include <QVariantMap>
 #include <QString>
 
-// ÒµÎñÂß¼­²ã£ºÍ³¼Æ·ÖÎö + Äæ²¨À¼±í´ïÊ½ÒıÇæ
+// ä¸šåŠ¡é€»è¾‘å±‚ï¼šç»Ÿè®¡åˆ†æ + é€†æ³¢å…°è¡¨è¾¾å¼å¼•æ“
 class DataProcessor
 {
 public:
     DataProcessor();
 
-    // °´²úÆ·»ã×Ü
+    // æŒ‰äº§å“æ±‡æ€»
     QVariantMap summarizeByProduct(const QVector<QVariantMap>& data);
 
-    // ¼ÆËã×ÜÏúÊÛ¶î
+    // è®¡ç®—æ€»é”€å”®é¢
     double calculateTotalRevenue(const QVector<QVariantMap>& data);
 
-    // Äæ²¨À¼±í´ïÊ½¼ÆËã£¨Ö§³Ö + - * / ( )£©
+    // é€†æ³¢å…°è¡¨è¾¾å¼è®¡ç®—ï¼ˆæ”¯æŒ + - * / ( )ï¼‰
     double evaluateRPN(const QString& expression);
 };
 
